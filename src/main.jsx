@@ -10,6 +10,7 @@ import {Eventos} from './components/Eventos';
 import {Footer} from './components/Footer'
 import {Conta} from './components/Conta'
 import {Sobre} from './components/Sobre';
+import {Postar} from './components/Postar';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -25,6 +26,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/sobre" element={<Sobre />} />
         <Route path="/eventos" element={<Eventos />} />
         <Route path="/conta" element={<Conta />} />
+        <Route path="/postar" element={<Postar />} />
       </Routes>
 
     </BrowserRouter>

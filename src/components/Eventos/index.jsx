@@ -1,8 +1,10 @@
 import React from "react";
 import { Eventoscontainer } from "./styles.js";
+import { useNavigate } from "react-router-dom";
+import styled, { keyframes } from 'styled-components';
 
 export function Eventos() {
-
+const navigate = useNavigate();
   return (
     <Eventoscontainer>
         
@@ -70,9 +72,13 @@ export function Eventos() {
         
         <div className="Criacaoevento">
           <p className="Chamada">CRIE SEU PRÓPRIO EVENTO</p>
-          <button className="Btcriar">
-            CRIAR EVENTO
-          </button>
+            <div className="botao">
+
+              <button onClick={() => navigate('/postar')}>CRIAR EVENTO</button>
+              <div className="quadrado"></div>
+
+          </div>
+
         </div>
     </Eventoscontainer>
   );

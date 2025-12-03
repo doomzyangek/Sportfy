@@ -5,7 +5,7 @@ export const Sobrecontainer = styled.div`
   width: 100%;
   min-height: 100vh;
   /* Gradiente azul padrão do seu projeto */
-  background: linear-gradient(180deg, #001540 0%, #0044cc 100%);
+  background: linear-gradient(135deg, #001540 0%, #0044cc 100%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,10 +24,10 @@ export const Sobrecontainer = styled.div`
   /* --- 3. LADO ESQUERDO: TEXTO --- */
   .TextSide {
     color: white;
-    width: 30vw;
+    width: 40vw;
     
     p{
-    font-size: 1.5rem;
+    font-size: 2rem;
     line-height: 1.3; /* Altura da linha para facilitar leitura */
     text-align: left; /* Texto justificado igual à imagem */
     }
@@ -87,5 +87,19 @@ export const Sobrecontainer = styled.div`
       text-align: center; /* No celular texto centralizado fica melhor */
       font-size: 1rem;
     }
+  }
+
+  & .TextSide p .paixao {
+    color: #faff3e;
+    font-weight: bold;
+  }
+
+  & .TextSide p .amizade {
+    color: #faff3e;
+    font-weight: bold;
+  }
+
+  & .TextSide p .missao {
+    color: #faff3e;
   }
 `;

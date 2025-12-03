@@ -154,4 +154,18 @@ export const Eventoscontainer = styled.div`
   .Card:hover .Overlay {
     opacity: 1; /* Aparece */
   }
+
+  & .botao button{
+        margin-top: 70px;
+        background-color: #faff3e;  
+        color: #0f1640;                
+        padding: 12px 50px;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        font-weight: bold;
+        width: 350px;
+        height: 70px;
+        font-size: 30px;
+    }
 `
