@@ -1,8 +1,14 @@
 import React, { useState, useContext } from 'react';
 import { Contacontainer } from './styles.js';
 import { UserContext } from '../../context/UserContext'; 
+import { useNavigate } from 'react-router-dom';
 
 export function Conta() {
+  const navigate = useNavigate();
+  
+    function edit() {
+      navigate('/editar');
+    }
   const { user, login } = useContext(UserContext);
 
   // Estados para os campos do formulário
@@ -84,7 +90,7 @@ export function Conta() {
         </div>
 
         <div className='Opcoesperfil'>
-          <button>EDITAR PERFIL</button>
+          <button onClick={edit}>EDITAR PERFIL</button>
           <button>PARTILHAR PERFIL</button>
         </div> 
       </div>

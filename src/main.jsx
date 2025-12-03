@@ -10,6 +10,7 @@ import {Eventos} from './components/Eventos';
 import {Footer} from './components/Footer'
 import {Conta} from './components/Conta'
 import {Sobre} from './components/Sobre';
+import {EditarPerfil} from './components/Editarperfil';
 import { UserProvider } from './context/UserContext';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -28,6 +29,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/sobre" element={<Sobre />} />
           <Route path="/eventos" element={<Eventos />} />
           <Route path="/conta" element={<Conta />} />
+          <Route path="/editar" element={<EditarPerfil />} />
         </Routes>
 
       </BrowserRouter>
