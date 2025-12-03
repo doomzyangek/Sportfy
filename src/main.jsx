@@ -10,23 +10,27 @@ import {Eventos} from './components/Eventos';
 import {Footer} from './components/Footer'
 import {Conta} from './components/Conta'
 import {Sobre} from './components/Sobre';
+import { UserProvider } from './context/UserContext';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter> {/* 1. Engloba tudo */}
-      
-      <GlobalStyle />
-      
-      <Navbar /> {/* 2. Navbar fica aqui, visível em todas as páginas */}
+    {/* Envolva TUDO com o UserProvider */}
+    <UserProvider>
+      <BrowserRouter> 
+        
+        <GlobalStyle />
+        
+        <Navbar /> 
 
-      <Routes> {/* 3. As páginas que mudam ficam aqui */}
-        <Route path="/" element={<Cover />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/sobre" element={<Sobre />} />
-        <Route path="/eventos" element={<Eventos />} />
-        <Route path="/conta" element={<Conta />} />
-      </Routes>
+        <Routes> 
+          <Route path="/" element={<Cover />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/sobre" element={<Sobre />} />
+          <Route path="/eventos" element={<Eventos />} />
+          <Route path="/conta" element={<Conta />} />
+        </Routes>
 
-    </BrowserRouter>
+      </BrowserRouter>
+    </UserProvider>
   </React.StrictMode>,
 )
