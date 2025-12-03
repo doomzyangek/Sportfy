@@ -13,7 +13,15 @@ const navigate = useNavigate();
         <div className="TextSide">
           <h1>SOBRE NÓS</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea qui velit aspernatur, aliquam impedit eum amet quisquam vel ullam adipisci dolorem distinctio? Unde minus ipsa ipsum hic? Eos, assumenda vitae.
+            <br></br>
+            Bem-vindo ao Sportfy! Somos a plataforma ideal para quem busca socializar e praticar esportes.
+            Somos mais do que um organizador de eventos; somos uma comunidade dedicada a unir pessoas através da <span className="paixao">paixão</span> pelo movimento.
+            
+            <br></br>
+            <br></br>
+
+            <span className="missao">Nossa Missão: </span>
+            Acreditamos no esporte como um catalisador para <span className="amizade">amizades</span>. Nossa missão é conectar você com eventos esportivos próximos e facilitar a organização de encontros. Queremos que cada jogo, corrida ou treino seja uma oportunidade para fazer novos amigos e fortalecer o espírito de equipe.
           </p>
         </div>
 

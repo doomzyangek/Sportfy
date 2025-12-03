@@ -12,6 +12,7 @@ import {Conta} from './components/Conta'
 import {Sobre} from './components/Sobre';
 import {EditarPerfil} from './components/Editarperfil';
 import { UserProvider } from './context/UserContext';
+import {Postar} from './components/Postar';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -30,7 +31,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/eventos" element={<Eventos />} />
           <Route path="/conta" element={<Conta />} />
           <Route path="/editar" element={<EditarPerfil />} />
+          <Route path="/postar" element={<Postar />} />
         </Routes>
+
 
       </BrowserRouter>
     </UserProvider>
