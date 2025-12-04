@@ -5,7 +5,7 @@ export function Editar() {
 
   return (
     <Editarcontainer>
-     
+    
     </Editarcontainer>
   );
 }
