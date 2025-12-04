@@ -1,11 +1,10 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { EditarContainer } from './styles';
+import { EditarContainer } from './styles'; // Importa o componente de estilo que acabamos de corrigir
 import { UserContext } from '../../context/UserContext';
-// Importação direta da imagem padrão para garantir que funciona
 import defaultAvatar from '../../assets/icon.webp';
 
-// Ícone de Lápis simples (SVG)
+// Ícone do Lápis (PencilIcon)
 const PencilIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
     <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
@@ -16,44 +15,66 @@ export function EditarPerfil() {
   const { user, updateProfile } = useContext(UserContext);
   const navigate = useNavigate();
 
-  // 1. Estados Simples (apenas texto)
+  // Estados com valores default do usuário
   const [nome, setNome] = useState(user.nome || 'FULANO B.');
-  const [idade, setIdade] = useState(user.idade || '19 anos');
+  const [idade, setIdade] = useState(user.idade || '19');
   const [bio, setBio] = useState(user.bio || '');
   const [local, setLocal] = useState(user.local || '');
   const [esportes, setEsportes] = useState(user.esportes || '');
 
-  // 2. Função de Salvar (envia os dados e volta)
+  const [novaImagemURL, setNovaImagemURL] = useState(null);
+  const inputRef = useRef(null);
+
+  const handleCircleClick = () => {
+    inputRef.current.click();
+  };
+
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const url = URL.createObjectURL(file);
+      setNovaImagemURL(url);
+    }
+  };
+
   const handleSalvar = () => {
+    const avatarToSave = novaImagemURL || user.avatar || defaultAvatar;
+
     updateProfile({ 
       nome, 
       idade, 
       bio, 
       local, 
       esportes,
-      // Se não houver avatar no user, usa o importado
-      avatar: user.avatar || defaultAvatar 
+      avatar: avatarToSave
     });
     navigate('/conta');
   };
+
+  const avatarDisplay = novaImagemURL || user.avatar || defaultAvatar;
 
   return (
     <EditarContainer>
       <div className="CardPrincipal">
         
-        {/* --- LADO ESQUERDO (Foto e Nome) --- */}
+        {/* Coluna Esquerda */}
         <div className="ColunaEsquerda">
             <div className="AvatarWrapper">
-                {/* Mostra o avatar atual ou o padrão */}
-                <img src={user.avatar || defaultAvatar} alt="Avatar" />
+                <img src={avatarDisplay} alt="Avatar" />
                 
-                {/* Botão de Lápis (Apenas visual por enquanto) */}
-                <button className="EditIconBadge">
+                <button className="EditIconBadge" onClick={handleCircleClick}>
                     <PencilIcon />
                 </button>
             </div>
 
-            {/* Nome Editável */}
+            <input
+              type="file"
+              accept="image/*"
+              ref={inputRef}
+              onChange={handleImageChange}
+              style={{ display: 'none' }}
+            />
+
             <div className="InputTransparente">
                 <input 
                     type="text" 
@@ -64,24 +85,25 @@ export function EditarPerfil() {
                 <span className="IconePequeno"><PencilIcon /></span>
             </div>
 
-            {/* Idade Editável */}
-            <div className="InputTransparente">
+            {/* Idade Editável: Agora exibe 'anos' na mesma linha */}
+            <div className="InputTransparente InputIdadeWrapper">
                 <input 
                     type="text" 
                     value={idade} 
-                    onChange={e => setIdade(e.target.value)} 
+                    onChange={e => setIdade(e.target.value.replace(' anos', ''))} 
                     className="InputIdade"
                 />
+                
+                <span className="SuffixText">ANOS</span>
                 <span className="IconePequeno"><PencilIcon /></span>
             </div>
-
+                
             <button className="BtnConfirmar" onClick={handleSalvar}>CONFIRMAR</button>
         </div>
 
-        {/* --- LADO DIREITO (Formulário Amarelo) --- */}
+        {/* Coluna Direita */}
         <div className="ColunaDireita">
             
-            {/* Campo BIO */}
             <div className="CampoAmarelo">
                 <label>BIO</label>
                 <div className="InputWrapper">
@@ -95,7 +117,6 @@ export function EditarPerfil() {
                 </div>
             </div>
 
-            {/* Campo LOCAL */}
             <div className="CampoAmarelo">
                 <label>LOCAL</label>
                 <div className="InputWrapper">
@@ -109,7 +130,6 @@ export function EditarPerfil() {
                 </div>
             </div>
 
-            {/* Campo ESPORTES */}
             <div className="CampoAmarelo">
                 <label>ESPORTES</label>
                 <div className="InputWrapper">
