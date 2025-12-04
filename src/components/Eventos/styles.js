@@ -28,7 +28,7 @@ export const Eventoscontainer = styled.div`
   }
 
   .Btcriar {
-    background-color: #FAFF3E; /* Amarelo */
+    background-color: #FFFF00; /* Amarelo */
     color: #001540;
     font-size: 1.2rem;
     font-weight: bold;
@@ -42,7 +42,7 @@ export const Eventoscontainer = styled.div`
 
   .Btcriar:hover {
     transform: scale(1.05);
-    filter:drop-shadow(0px 0px 20px #faff3e);
+    filter:drop-shadow(0px 0px 20px #FFFF00);
   }
 
   /* --- SEÇÃO DE SUGESTÕES --- */
@@ -87,7 +87,7 @@ export const Eventoscontainer = styled.div`
     right: 10px;
     width: 40px;
     height: 40px;
-    background-color: #faff3e;
+    background-color: #FFFF00;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -131,7 +131,7 @@ export const Eventoscontainer = styled.div`
   }
 
   .Overlay h3 {
-    color: #FAFF3E;
+    color: #FFFF00;
     font-size: 1.1rem;
     text-transform: uppercase;
     margin-bottom: 5px;
@@ -157,7 +157,7 @@ export const Eventoscontainer = styled.div`
 
   & .botao button{
         margin-top: 70px;
-        background-color: #faff3e;  
+        background-color: #FFFF00;  
         color: #0f1640;                
         padding: 12px 50px;
         border: none;

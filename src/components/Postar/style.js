@@ -36,7 +36,7 @@ export const Postarcontainer = styled.div`
     }
 
     .titulo h1 {
-        color: #faff3e;
+        color: #FFFF00;
         font-size: 80px;
         margin: 0;
     }
@@ -103,7 +103,7 @@ export const Postarcontainer = styled.div`
     }
 
     .btn-postar {
-        background-color: #faff3e; 
+        background-color: #FFFF00; 
         color: #0f1640;
         padding: 30px 100px; 
         border: none;

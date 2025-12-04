@@ -26,13 +26,13 @@ export const Covercontainer = styled.div`
 
     & h5 {
     font-family: 'Montserrat', sans-serif;
-    color: #faff3e;
+    color: #FFFF00;
     margin-left: 127px;
     margin-bottom: -10px;
     }
 
     & h1 {
-    color: #faff3e;
+    color: #FFFF00;
     margin-left: 143px;   
     margin-top: -67px;
     font-size: 20px; 
@@ -54,7 +54,7 @@ export const Covercontainer = styled.div`
   }
 
   & .verde h1{
-    color: #faff3e;
+    color: #FFFF00;
     font-size: 109px;
     margin: 0;
     line-height: 0.85;

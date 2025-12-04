@@ -33,7 +33,7 @@ export const Sobrecontainer = styled.div`
     }
     h1{
     font-size: 4rem;
-    color: #FAFF3E;
+    color: #FFFF00;
 
     }
   }
@@ -57,7 +57,7 @@ export const Sobrecontainer = styled.div`
 
 
   .VisualSide button {
-    background-color: #FAFF3E; /* Amarelo Neon */
+    background-color: #FFFF00; /* Amarelo Neon */
     color: #001540; /* Azul Escuro */
     font-size: 1.5rem;
     font-weight: 700;
@@ -73,7 +73,7 @@ export const Sobrecontainer = styled.div`
   .VisualSide button:hover {
     transform: scale(1.05);
     background-color: #e6eb39;
-    filter:drop-shadow(0px 0px 2px #faff3e);
+    filter:drop-shadow(0px 0px 2px #FFFF00);
   }
 
   /* --- 5. RESPONSIVIDADE (CELULAR) --- */
@@ -90,16 +90,16 @@ export const Sobrecontainer = styled.div`
   }
 
   & .TextSide p .paixao {
-    color: #faff3e;
+    color: #FFFF00;
     font-weight: bold;
   }
 
   & .TextSide p .amizade {
-    color: #faff3e;
+    color: #FFFF00;
     font-weight: bold;
   }
 
   & .TextSide p .missao {
-    color: #faff3e;
+    color: #FFFF00;
   }
 `;

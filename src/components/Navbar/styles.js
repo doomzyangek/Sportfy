@@ -23,7 +23,7 @@ export const MenuLink = styled(NavLink)`
   
   &.active:hover{
     transform: scale(1.2);
-    filter:drop-shadow(0px 0px 10px #faff3e);
+    filter:drop-shadow(0px 0px 10px #FFFF00);
   }
   &:hover{
     transform: scale(1.2);
@@ -33,6 +33,6 @@ export const MenuLink = styled(NavLink)`
   /* A MÁGICA ACONTECE AQUI: */
   /* O React Router aplica a classe .active automaticamente na rota atual */
   &.active {
-    color: #FAFF3E; /* Amarelo (Gold) ou a cor exata do seu design */
+    color: #FFFF00; /* Amarelo (Gold) ou a cor exata do seu design */
   }
 `;

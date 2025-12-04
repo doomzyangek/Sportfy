@@ -58,12 +58,12 @@ export const Homecontainer = styled.div`
     }
 
     & .frase p .conectar {
-        color: #faff3e;
+        color: #FFFF00;
         font-weight: bold;
     }
 
     & .frase p .divertir {
-        color: #faff3e;
+        color: #FFFF00;
         font-weight: bold;
     }
 
@@ -75,7 +75,7 @@ export const Homecontainer = styled.div`
 
     & .botao button{
         margin-top: 80px;
-        background-color: #faff3e;    
+        background-color: #FFFF00;    
         color: #0f1640;             
         padding: 12px 50px;
         border: none;
